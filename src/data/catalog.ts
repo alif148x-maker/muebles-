@@ -41,7 +41,7 @@ export interface Extra {
 export interface Choice {
   label: string;
   options: string[];
-  noteOn?: string;
+  noteOn?: string | string[];
   optionPrices?: Record<string, number>;
 }
 
@@ -192,7 +192,8 @@ export const CATALOG: Product[] = [
     bullets: ["Nombre o frase escrita en frosting o toppers personalizados"],
     hasFlavor: true,
     hasColor: true,
-    choice: { label: "Personalización", options: ["Nombre o frase", "Toppers"] },
+    choice: { label: "Personalización", options: ["Nombre o frase", "Toppers"], noteOn: "Nombre o frase" },
+    hasNote: true,
   },
   {
     id: "frosted-cake-4",
@@ -204,7 +205,8 @@ export const CATALOG: Product[] = [
     bullets: ["Incluye toppers"],
     hasFlavor: true,
     hasColor: true,
-    choice: { label: "Personalización", options: ["Nombre o frase", "Toppers"] },
+    choice: { label: "Personalización", options: ["Nombre o frase", "Toppers"], noteOn: "Nombre o frase" },
+    hasNote: true,
   },
   {
     id: "bone-cake",
@@ -227,7 +229,8 @@ export const CATALOG: Product[] = [
     bullets: ["Cake en forma de corazón", "Personalización incluida"],
     hasFlavor: true,
     hasColor: true,
-    choice: { label: "Personalización", options: ["Nombre", "Frase", "Toppers personalizados"] },
+    choice: { label: "Personalización", options: ["Nombre", "Frase", "Toppers personalizados"], noteOn: ["Nombre", "Frase"] },
+    hasNote: true,
   },
   {
     id: "cookie-cake",

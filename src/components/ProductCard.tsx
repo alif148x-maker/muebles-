@@ -6,6 +6,13 @@ import { useCart } from "../context/CartContext";
 
 const COLOR_OPTIONS = [...CAKE_COLORS, ...VEGETABLE_COLORS];
 
+function isNoteVisible(product: Product, choiceValue: string) {
+  if (!product.hasNote) return false;
+  const noteOn = product.choice?.noteOn;
+  if (!noteOn) return true;
+  return Array.isArray(noteOn) ? noteOn.includes(choiceValue) : choiceValue === noteOn;
+}
+
 export default function ProductCard({ product, wide }: { product: Product; wide?: boolean }) {
   const { addLine } = useCart();
   const [variantId, setVariantId] = useState(product.variants?.[0]?.id ?? "");
@@ -67,7 +74,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
   function handleAdd() {
     const variantLabel = product.variants?.find((v) => v.id === variantId)?.label;
     const extraLabels = product.extras?.filter((e) => extrasOn[e.id]).map((e) => e.label) ?? [];
-    const noteVisible = product.hasNote && (!product.choice?.noteOn || choiceValue === product.choice.noteOn);
+    const noteVisible = isNoteVisible(product, choiceValue);
     const detailParts = [
       variantLabel,
       ...extraLabels,
@@ -302,7 +309,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
           </div>
         )}
 
-        {product.hasNote && (!product.choice?.noteOn || choiceValue === product.choice.noteOn) && (
+        {isNoteVisible(product, choiceValue) && (
           <div>
             <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-olive-500">
               Notas / diseño deseado
