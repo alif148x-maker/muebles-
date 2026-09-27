@@ -64,9 +64,10 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
   const unitPrice = basePrice + extrasPrice + choicePrice;
 
   function toggleColor(name: string) {
+    const max = product.maxColors ?? 2;
     setColors((prev) => {
       if (prev.includes(name)) return prev.filter((c) => c !== name);
-      if (prev.length >= 2) return [prev[1], name];
+      if (prev.length >= max) return [...prev.slice(1), name];
       return [...prev, name];
     });
   }
@@ -246,7 +247,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
         {product.hasColor && (
           <div>
             <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-olive-500">
-              Colores (elige hasta 2)
+              Colores (elige hasta {product.maxColors ?? 2})
             </label>
             <div className="flex flex-wrap gap-2">
               {COLOR_OPTIONS.map((c) => (

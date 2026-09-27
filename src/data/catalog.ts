@@ -6,6 +6,7 @@ import imgMiniCakeNaked from "../assets/products/mini-cake-naked.jpg";
 import imgMiniCakeFrosted from "../assets/products/mini-cake-frosted.jpg";
 import imgFrostedCake4 from "../assets/products/frosted-cake-4.jpg";
 import imgBoneCake from "../assets/products/bone-cake.jpg";
+import imgBoneCake1Capa from "../assets/products/bone-cake-1capa.jpg";
 import imgMiniPupcakes from "../assets/products/mini-pupcakes.jpg";
 import imgMiniPupcakeOreo from "../assets/products/mini-pupcake-oreo.jpg";
 import imgDoggieTreats from "../assets/products/doggie-treats.jpg";
@@ -58,6 +59,7 @@ export interface Product {
   hasFlavor?: boolean;
   flavorOptions?: string[];
   hasColor?: boolean;
+  maxColors?: number;
   hasShape?: boolean;
   hasNote?: boolean;
   quoteOnly?: boolean;
@@ -218,6 +220,25 @@ export const CATALOG: Product[] = [
     bullets: ["Toppers personalizados", "Galleta personalizada con el nombre de tu mascota"],
     hasFlavor: true,
     hasColor: true,
+  },
+  {
+    id: "bone-cake-1capa",
+    category: "cakes",
+    name: "Barki Bone Cake",
+    tagline: "1 capa",
+    price: 20,
+    images: [imgBoneCake1Capa],
+    bullets: ["Decorado especialmente para celebrar a tu perrito"],
+    hasFlavor: true,
+    hasColor: true,
+    maxColors: 3,
+    choice: {
+      label: "Personalización",
+      options: ["Letras de yogur griego", "Topper personalizado", "Galleta personalizada"],
+      noteOn: ["Letras de yogur griego", "Galleta personalizada"],
+    },
+    hasNote: true,
+    note: "La base del cake siempre será blanca. Los colores elegidos se usan solo en los detalles y decoración del diseño.",
   },
   {
     id: "heart-cake",
