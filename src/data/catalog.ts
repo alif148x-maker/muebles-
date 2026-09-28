@@ -15,12 +15,14 @@ import imgCanastita from "../assets/products/canastita.jpg";
 import imgBanderines from "../assets/products/banderines.jpg";
 import imgGorritoTallas from "../assets/products/gorrito-tallas.jpg";
 import imgGorritoHat from "../assets/products/gorrito-hat.jpg";
-import imgPromoSeptiembre from "../assets/products/promo-septiembre.jpg";
+import imgPromoOctubre from "../assets/products/promo-octubre.jpg";
 import imgNakedStyle4 from "../assets/products/naked-style-4-3capas.jpg";
 import imgGatoMiniPupcake1 from "../assets/products/gato-mini-pupcake-1.jpg";
 import imgGatoMiniPupcake2 from "../assets/products/gato-mini-pupcake-2.jpg";
 import imgHeartCake from "../assets/products/heart-cake.jpg";
 import imgCookieCake from "../assets/products/cookie-cake.jpg";
+import imgCookieCakeJax from "../assets/products/cookie-cake-jax.jpg";
+import imgCookieCakeHalloween from "../assets/products/cookie-cake-halloween.jpg";
 import imgCollarLifestyle from "../assets/products/collar-lifestyle.jpg";
 import imgCollarNavy from "../assets/products/collar-navy.jpg";
 import imgCollarLila from "../assets/products/collar-lila.jpg";
@@ -64,6 +66,7 @@ export interface Product {
   hasNote?: boolean;
   quoteOnly?: boolean;
   choice?: Choice;
+  choice2?: Choice;
   images?: string[];
   note?: string;
 }
@@ -224,7 +227,7 @@ export const CATALOG: Product[] = [
   {
     id: "bone-cake-1capa",
     category: "cakes",
-    name: "Barki Bone Cake",
+    name: "Bone Cake",
     tagline: "1 capa",
     price: 20,
     images: [imgBoneCake1Capa],
@@ -258,11 +261,25 @@ export const CATALOG: Product[] = [
     category: "cakes",
     name: "Cookie Cake",
     tagline: "Cookie cake individual",
-    price: 12,
-    images: [imgCookieCake],
+    price: 10,
+    images: [imgCookieCake, imgCookieCakeJax],
     bullets: [
       "Sabor: mantequilla de maní (única opción disponible)",
       "Personalizable con nombre, frase corta o número/edad",
+    ],
+    hasColor: true,
+    hasNote: true,
+  },
+  {
+    id: "cookie-cake-halloween",
+    category: "cakes",
+    name: 'Halloween Cookie Cake "4"',
+    tagline: "Disponible todo octubre · producto limitado",
+    price: 10,
+    images: [imgCookieCakeHalloween],
+    bullets: [
+      "Sabor: mantequilla de maní (única opción disponible)",
+      "Un treat especial para consentir a tu perrito",
     ],
     hasColor: true,
     hasNote: true,
@@ -279,15 +296,16 @@ export const CATALOG: Product[] = [
       { id: "x24", label: "24 mini cupcakes", price: 45 },
     ],
     bullets: [
-      "Opción 1 — Cupcakes originales 🧁: personalizados con el nombre de tu peludito",
-      "Opción 2 (+$2.00) — Topper + mini treat 🐾: topper con la carita de tu peludito + mini treat personalizado",
+      "Opción 1 — Cupcakes originales 🧁: personalizados con el nombre de tu peludito, sin costo adicional",
+      "Opción 2 (+$3.00) — Carita personalizada: agrega la carita de tu mascota a los cupcakes",
+      "Opción 3 (+$6.00) — Carita + huesito personalizado: incluye la carita de tu mascota y un huesito con nombre o texto personalizado",
     ],
     hasFlavor: true,
     hasColor: true,
     choice: {
       label: "Elige tu opción favorita",
-      options: ["Cupcakes originales", "Topper + mini treat"],
-      optionPrices: { "Topper + mini treat": 2 },
+      options: ["Cupcakes originales", "Carita personalizada", "Carita + huesito personalizado"],
+      optionPrices: { "Carita personalizada": 3, "Carita + huesito personalizado": 6 },
     },
     note: "¿Necesitas otra cantidad? Cotiza tu set por WhatsApp.",
   },
@@ -361,15 +379,28 @@ export const CATALOG: Product[] = [
 ];
 
 export const PROMO: Product = {
-  id: "promo-septiembre",
+  id: "promo-octubre",
   category: "promo",
-  name: "Promo Septiembre",
+  name: "Promo Octubre",
   tagline: "Promo del mes",
-  price: 30,
-  images: [imgPromoSeptiembre],
-  bullets: ["Mini Frosted Cake personalizado", "Banderines incluidos"],
+  price: 20,
+  images: [imgPromoOctubre],
+  bullets: [
+    'Barki Bone Cake de 7" de una capa personalizado',
+    "Gorrito personalizado incluido",
+    "Promo válida durante octubre. Pedidos sujetos a disponibilidad; recomendamos ordenar con anticipación.",
+  ],
   hasFlavor: true,
   hasColor: true,
+  maxColors: 3,
+  choice: {
+    label: "Personalización",
+    options: ["Letras de yogur griego", "Topper personalizado", "Galleta personalizada"],
+    noteOn: ["Letras de yogur griego", "Galleta personalizada"],
+  },
+  hasNote: true,
+  choice2: { label: "Talla de gorrito", options: ["XS", "S", "L"] },
+  note: "La base del cake siempre será blanca. Los colores elegidos se usan solo en los detalles y decoración del diseño.",
 };
 
 export const CUSTOM_QUOTE: Product = {

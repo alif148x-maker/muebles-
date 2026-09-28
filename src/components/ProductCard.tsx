@@ -22,6 +22,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
   const [colors, setColors] = useState<string[]>([]);
   const [shape, setShape] = useState(SHAPES[0]);
   const [choiceValue, setChoiceValue] = useState(product.choice?.options[0] ?? "");
+  const [choice2Value, setChoice2Value] = useState(product.choice2?.options[0] ?? "");
   const [note, setNote] = useState("");
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
@@ -60,8 +61,9 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
   }, [product.extras, extrasOn]);
 
   const choicePrice = product.choice?.optionPrices?.[choiceValue] ?? 0;
+  const choice2Price = product.choice2?.optionPrices?.[choice2Value] ?? 0;
 
-  const unitPrice = basePrice + extrasPrice + choicePrice;
+  const unitPrice = basePrice + extrasPrice + choicePrice + choice2Price;
 
   function toggleColor(name: string) {
     const max = product.maxColors ?? 2;
@@ -83,6 +85,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
       product.hasColor && colors.length ? `colores: ${colors.join(" y ")}` : null,
       product.hasShape ? `forma: ${shape}` : null,
       product.choice ? `${product.choice.label.toLowerCase()}: ${choiceValue}` : null,
+      product.choice2 ? `${product.choice2.label.toLowerCase()}: ${choice2Value}` : null,
       noteVisible && note.trim() ? `nota: ${note.trim()}` : null,
     ].filter(Boolean) as string[];
 
@@ -94,6 +97,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
       colors.join("-"),
       product.hasShape ? shape : "",
       product.choice ? choiceValue : "",
+      product.choice2 ? choice2Value : "",
       noteVisible ? note.trim() : "",
     ]
       .filter(Boolean)
@@ -299,6 +303,31 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
                     onClick={() => setChoiceValue(o)}
                     className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
                       choiceValue === o ? "border-olive-500 bg-olive-500 text-white" : "border-olive-200 text-olive-600"
+                    }`}
+                  >
+                    {o}
+                    {extra ? ` (+$${extra.toFixed(2)})` : ""}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {product.choice2 && (
+          <div>
+            <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-olive-500">
+              {product.choice2.label}
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {product.choice2.options.map((o) => {
+                const extra = product.choice2?.optionPrices?.[o];
+                return (
+                  <button
+                    key={o}
+                    onClick={() => setChoice2Value(o)}
+                    className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                      choice2Value === o ? "border-olive-500 bg-olive-500 text-white" : "border-olive-200 text-olive-600"
                     }`}
                   >
                     {o}

@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="relative mx-auto grid w-full max-w-md grid-cols-2 gap-4">
           <img
             src={dogCake}
-            alt="Koko celebrando su cumpleaños con un cake Barki"
+            alt="Cliente feliz con su cake Barki"
             className="col-span-2 w-full rounded-[2rem] object-contain shadow-soft"
           />
           <div className="col-span-2 flex flex-col justify-center rounded-[2rem] bg-olive-500 p-5 text-white shadow-soft">
