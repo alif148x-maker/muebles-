@@ -229,18 +229,13 @@ export const CATALOG: Product[] = [
     category: "cakes",
     name: "Bone Cake",
     tagline: "1 capa",
-    price: 20,
+    price: 25,
     images: [imgBoneCake1Capa],
     bullets: ["Decorado especialmente para celebrar a tu perrito"],
     hasFlavor: true,
     hasColor: true,
     maxColors: 3,
-    choice: {
-      label: "Personalización",
-      options: ["Letras de yogur griego", "Topper personalizado", "Galleta personalizada"],
-      noteOn: ["Letras de yogur griego", "Galleta personalizada"],
-    },
-    hasNote: true,
+    choice: { label: "Personalización", options: ["Con toppers", "Sin toppers"] },
     note: "La base del cake siempre será blanca. Los colores elegidos se usan solo en los detalles y decoración del diseño.",
   },
   {
@@ -383,7 +378,7 @@ export const PROMO: Product = {
   category: "promo",
   name: "Promo Octubre",
   tagline: "Promo del mes",
-  price: 20,
+  price: 25,
   images: [imgPromoOctubre],
   bullets: [
     'Barki Bone Cake de 7" de una capa personalizado',
@@ -393,12 +388,7 @@ export const PROMO: Product = {
   hasFlavor: true,
   hasColor: true,
   maxColors: 3,
-  choice: {
-    label: "Personalización",
-    options: ["Letras de yogur griego", "Topper personalizado", "Galleta personalizada"],
-    noteOn: ["Letras de yogur griego", "Galleta personalizada"],
-  },
-  hasNote: true,
+  choice: { label: "Personalización", options: ["Con toppers", "Sin toppers"] },
   choice2: { label: "Talla de gorrito", options: ["XS", "S", "L"] },
   note: "La base del cake siempre será blanca. Los colores elegidos se usan solo en los detalles y decoración del diseño.",
 };
