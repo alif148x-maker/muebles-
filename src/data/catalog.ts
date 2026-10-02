@@ -26,6 +26,10 @@ import imgCookieCakeHalloween from "../assets/products/cookie-cake-halloween.jpg
 import imgCollarLifestyle from "../assets/products/collar-lifestyle.jpg";
 import imgCollarNavy from "../assets/products/collar-navy.jpg";
 import imgCollarLila from "../assets/products/collar-lila.jpg";
+import imgBolaTenis from "../assets/products/bola-tenis.jpg";
+import imgMiniDonuts from "../assets/products/mini-donuts.jpg";
+import imgCookiesTemporada1 from "../assets/products/cookies-temporada-1.jpg";
+import imgCookiesTemporada2 from "../assets/products/cookies-temporada-2.jpg";
 
 export type Category = "planes" | "cakes" | "pupcakes" | "decor" | "treats" | "promo" | "gatos" | "accesorios";
 
@@ -370,6 +374,58 @@ export const CATALOG: Product[] = [
       "Diseñado para minimizar irritaciones en la piel",
     ],
     choice: { label: "Color y talla", options: ["Lila (M)", "Azul (S)"] },
+  },
+  {
+    id: "bola-tenis",
+    category: "cakes",
+    name: "Bola de Tenis 🎾",
+    tagline: "5 pulgadas",
+    price: 35,
+    images: [imgBolaTenis],
+    bullets: [
+      "Cake especial en forma de bola de tenis",
+      "Ingredientes de la mezcla: carne, arroz y zanahoria hervida",
+      "Únicamente disponible en los colores mostrados en la foto",
+    ],
+  },
+  {
+    id: "mini-donuts",
+    category: "pupcakes",
+    name: "Mini Frosted Donuts",
+    tagline: "Decorados para tu peludito",
+    images: [imgMiniDonuts],
+    variants: [
+      { id: "x3", label: "Combo de 3", price: 5 },
+      { id: "x7", label: "Combo de 7", price: 10 },
+      { id: "x12", label: "Combo de 12", price: 15 },
+    ],
+    hasFlavor: true,
+    hasColor: true,
+    maxColors: 3,
+    hasNote: true,
+    note: "¿Tienes un diseño en mente? Cotízalo en la caja de notas.",
+  },
+  {
+    id: "frosted-cookies-personalizadas",
+    category: "treats",
+    name: "Docena de Frosted Cookies personalizadas",
+    price: 25,
+    priceNote: "desde",
+    bullets: ["Cotiza tu tema o diseño en la caja de notas"],
+    hasNote: true,
+  },
+  {
+    id: "frosted-cookies-temporada",
+    category: "treats",
+    name: "Frosted Cookies de Temporada",
+    tagline: "Set de 5",
+    price: 12,
+    images: [imgCookiesTemporada1, imgCookiesTemporada2],
+    bullets: [
+      "Set especial de 5 Frosted Cookies con diseños inspirados en la temporada y celebraciones del mes",
+      "Incluye 5 galletas decoradas con diseños seleccionados por Barki",
+      "Los diseños cambian cada mes y están disponibles por tiempo limitado",
+    ],
   },
 ];
 

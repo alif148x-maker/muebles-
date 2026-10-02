@@ -1,4 +1,4 @@
-import { Instagram, MessageCircle, PawPrint } from "lucide-react";
+import { Instagram, MessageCircle, PawPrint, Star } from "lucide-react";
 import dogCake from "../assets/hero-dog-cake.jpg";
 import { INSTAGRAM_URL, WHATSAPP_NUMBER } from "../data/config";
 
@@ -44,11 +44,22 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto grid w-full max-w-md grid-cols-2 gap-4">
-          <img
-            src={dogCake}
-            alt="Cliente feliz con su cake Barki"
-            className="col-span-2 w-full rounded-[2rem] object-contain shadow-soft"
-          />
+          <div className="relative col-span-2 mx-auto w-4/5">
+            <img
+              src={dogCake}
+              alt="Cliente feliz con su cake Barki"
+              className="w-full rounded-[2rem] object-contain shadow-soft"
+            />
+            <span className="absolute left-2 top-2 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-olive-700 shadow-soft">
+              <PawPrint size={13} className="text-blush-400" />
+              Cliente feliz
+              <span className="flex items-center text-blush-400">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={10} fill="currentColor" strokeWidth={0} />
+                ))}
+              </span>
+            </span>
+          </div>
           <div className="col-span-2 flex flex-col justify-center rounded-[2rem] bg-olive-500 p-5 text-white shadow-soft">
             <span className="font-display text-3xl font-extrabold">100%</span>
             <span className="text-sm font-semibold text-olive-100">Natural · Libre de gluten, soya y azúcar</span>
