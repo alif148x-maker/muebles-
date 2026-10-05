@@ -105,7 +105,7 @@ export default function About() {
             ))}
           </div>
 
-          <p className="mt-5 text-xs text-olive-200">Colorante vegetal</p>
+          <p className="mt-5 text-xs text-olive-200">Colorante grado alimenticio</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {VEGETABLE_COLORS.map((c) => (
               <div key={c.name} className="flex items-center gap-2 rounded-full bg-white/10 py-1.5 pl-1.5 pr-3">
