@@ -28,8 +28,7 @@ import imgCollarNavy from "../assets/products/collar-navy.jpg";
 import imgCollarLila from "../assets/products/collar-lila.jpg";
 import imgBolaTenis from "../assets/products/bola-tenis.jpg";
 import imgMiniDonuts from "../assets/products/mini-donuts.jpg";
-import imgCookiesTemporada1 from "../assets/products/cookies-temporada-1.jpg";
-import imgCookiesTemporada2 from "../assets/products/cookies-temporada-2.jpg";
+import imgCookiesTemporadaHalloween from "../assets/products/cookies-temporada-halloween.jpg";
 
 export type Category = "planes" | "cakes" | "pupcakes" | "decor" | "treats" | "promo" | "gatos" | "accesorios";
 
@@ -363,14 +362,13 @@ export const CATALOG: Product[] = [
   {
     id: "frosted-cookies-temporada",
     category: "treats",
-    name: "Frosted Cookies de Temporada",
-    tagline: "Set de 5",
-    price: 12,
-    images: [imgCookiesTemporada1, imgCookiesTemporada2],
+    name: "Frosted Cookie Box de Temporada 🎃",
+    tagline: "6 unidades",
+    price: 20,
+    images: [imgCookiesTemporadaHalloween],
     bullets: [
-      "Set especial de 5 Frosted Cookies con diseños inspirados en la temporada y celebraciones del mes",
-      "Incluye 5 galletas decoradas con diseños seleccionados por Barki",
-      "Los diseños cambian cada mes y están disponibles por tiempo limitado",
+      "Selección especial de temporada con Frosted Cookies + Mini Donuts, decoradas a mano con diseños únicos inspirados en Halloween",
+      "Incluye 6 piezas surtidas entre Frosted Cookies y Mini Donuts",
     ],
   },
   {
