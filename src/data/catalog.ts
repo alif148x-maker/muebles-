@@ -3,7 +3,10 @@ import imgPlanGold from "../assets/products/plan-gold.jpg";
 import imgPlanDeluxe from "../assets/products/plan-deluxe.jpg";
 import imgPupcake from "../assets/products/pupcake.jpg";
 import imgMiniCakeNaked from "../assets/products/mini-cake-naked.jpg";
-import imgMiniCakeFrosted from "../assets/products/mini-cake-frosted.jpg";
+import imgMiniFrostedArjun from "../assets/products/mini-frosted-arjun.jpg";
+import imgMiniFrostedLucca from "../assets/products/mini-frosted-lucca.jpg";
+import imgMiniFrostedCherry from "../assets/products/mini-frosted-cherry.jpg";
+import imgMiniFrostedMocha from "../assets/products/mini-frosted-mocha.jpg";
 import imgFrostedCake4 from "../assets/products/frosted-cake-4.jpg";
 import imgBoneCake from "../assets/products/bone-cake.jpg";
 import imgBoneCake1Capa from "../assets/products/bone-cake-1capa.jpg";
@@ -185,7 +188,7 @@ export const CATALOG: Product[] = [
     name: 'Mini Cake "4" — Frosted',
     tagline: "2 capas · aprox. 6 porciones grandes",
     price: 30,
-    images: [imgMiniCakeFrosted],
+    images: [imgMiniFrostedArjun, imgMiniFrostedLucca, imgMiniFrostedCherry, imgMiniFrostedMocha],
     bullets: ["Nombre o frase escrita en frosting o toppers personalizados"],
     hasFlavor: true,
     hasColor: true,
