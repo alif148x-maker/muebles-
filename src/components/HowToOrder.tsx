@@ -21,7 +21,7 @@ export default function HowToOrder() {
                 {s.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-olive-400" />
-                    <span>{item}</span>
+                    <span className={item.includes("anticipación") ? "font-bold" : undefined}>{item}</span>
                   </li>
                 ))}
               </ul>
