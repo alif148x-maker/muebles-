@@ -1,7 +1,7 @@
 import imgPlanSilver from "../assets/products/plan-silver.jpg";
 import imgPlanGold from "../assets/products/plan-gold.jpg";
 import imgPlanDeluxe from "../assets/products/plan-deluxe.jpg";
-import imgPupcake from "../assets/products/pupcake.jpg";
+import imgPupcakeFalafel from "../assets/products/pupcake-falafel.jpg";
 import imgMiniCakeNaked from "../assets/products/mini-cake-naked.jpg";
 import imgMiniFrostedArjun from "../assets/products/mini-frosted-arjun.jpg";
 import imgMiniFrostedLucca from "../assets/products/mini-frosted-lucca.jpg";
@@ -10,7 +10,8 @@ import imgMiniFrostedMocha from "../assets/products/mini-frosted-mocha.jpg";
 import imgFrostedCake4 from "../assets/products/frosted-cake-4.jpg";
 import imgBoneCake from "../assets/products/bone-cake.jpg";
 import imgBoneCake1Capa from "../assets/products/bone-cake-1capa.jpg";
-import imgMiniPupcakes from "../assets/products/mini-pupcakes.jpg";
+import imgMiniPupcakeS from "../assets/products/mini-pupcake-s.jpg";
+import imgMiniPupcakeToby from "../assets/products/mini-pupcake-toby.jpg";
 import imgMiniPupcakeOreo from "../assets/products/mini-pupcake-oreo.jpg";
 import imgDoggieTreats from "../assets/products/doggie-treats.jpg";
 import imgDoggieTreatsSky from "../assets/products/doggie-treats-sky.jpg";
@@ -25,13 +26,12 @@ import imgGatoMiniPupcake2 from "../assets/products/gato-mini-pupcake-2.jpg";
 import imgHeartCake from "../assets/products/heart-cake.jpg";
 import imgCookieCake from "../assets/products/cookie-cake.jpg";
 import imgCookieCakeJax from "../assets/products/cookie-cake-jax.jpg";
-import imgCookieCakeHalloween from "../assets/products/cookie-cake-halloween.jpg";
 import imgCollarLifestyle from "../assets/products/collar-lifestyle.jpg";
 import imgCollarNavy from "../assets/products/collar-navy.jpg";
 import imgCollarLila from "../assets/products/collar-lila.jpg";
 import imgBolaTenis from "../assets/products/bola-tenis.jpg";
 import imgMiniDonuts from "../assets/products/mini-donuts.jpg";
-import imgCookiesTemporadaHalloween from "../assets/products/cookies-temporada-halloween.jpg";
+import imgMiniDonutsPersonalizados from "../assets/products/mini-donuts-personalizados.jpg";
 
 export type Category = "planes" | "cakes" | "pupcakes" | "decor" | "treats" | "promo" | "gatos" | "accesorios";
 
@@ -274,26 +274,12 @@ export const CATALOG: Product[] = [
     hasNote: true,
   },
   {
-    id: "cookie-cake-halloween",
-    category: "cakes",
-    name: 'Halloween Cookie Cake "4"',
-    tagline: "Disponible todo octubre · producto limitado",
-    price: 10,
-    images: [imgCookieCakeHalloween],
-    bullets: [
-      "Sabor: mantequilla de maní (única opción disponible)",
-      "Un treat especial para consentir a tu perrito",
-    ],
-    hasColor: true,
-    hasNote: true,
-  },
-  {
     id: "pupcake",
     category: "pupcakes",
     name: "Pupcake",
     tagline: "4 porciones pequeñas",
     price: 15,
-    images: [imgPupcake],
+    images: [imgPupcakeFalafel],
     bullets: ["Incluye 2 toppers", "Mini galleta con el nombre de tu mascota"],
     hasFlavor: true,
     hasColor: true,
@@ -303,7 +289,7 @@ export const CATALOG: Product[] = [
     category: "pupcakes",
     name: "Mini Pupcakes",
     tagline: "Decorados con el nombre de tu mascota",
-    images: [imgMiniPupcakes, imgMiniPupcakeOreo],
+    images: [imgMiniPupcakeS, imgMiniPupcakeToby, imgMiniPupcakeOreo],
     variants: [
       { id: "x6", label: "6 mini cupcakes", price: 15 },
       { id: "x12", label: "12 mini cupcakes", price: 25 },
@@ -341,7 +327,7 @@ export const CATALOG: Product[] = [
     category: "treats",
     name: "Mini Frosted Donuts",
     tagline: "Decorados para tu peludito",
-    images: [imgMiniDonuts],
+    images: [imgMiniDonuts, imgMiniDonutsPersonalizados],
     variants: [
       { id: "x3", label: "Combo de 3", price: 5 },
       { id: "x7", label: "Combo de 7", price: 10 },
@@ -361,18 +347,6 @@ export const CATALOG: Product[] = [
     priceNote: "desde",
     bullets: ["Cotiza tu tema o diseño en la caja de notas"],
     hasNote: true,
-  },
-  {
-    id: "frosted-cookies-temporada",
-    category: "treats",
-    name: "Frosted Cookie Box de Temporada 🎃",
-    tagline: "6 unidades",
-    price: 20,
-    images: [imgCookiesTemporadaHalloween],
-    bullets: [
-      "Selección especial de temporada con Frosted Cookies + Mini Donuts, decoradas a mano con diseños únicos inspirados en Halloween",
-      "Incluye 6 piezas surtidas entre Frosted Cookies y Mini Donuts",
-    ],
   },
   {
     id: "canastita",
@@ -433,14 +407,14 @@ export const CATALOG: Product[] = [
 export const PROMO: Product = {
   id: "promo-octubre",
   category: "promo",
-  name: "Promo Octubre",
+  name: "Promo Noviembre",
   tagline: "Promo del mes",
   price: 25,
   images: [imgPromoOctubre],
   bullets: [
     'Barki Bone Cake de 7" de una capa personalizado',
     "Gorrito personalizado incluido",
-    "Promo válida durante octubre. Pedidos sujetos a disponibilidad; recomendamos ordenar con anticipación.",
+    "Promo válida durante noviembre. Pedidos sujetos a disponibilidad; recomendamos ordenar con anticipación.",
   ],
   hasFlavor: true,
   hasColor: true,
