@@ -95,7 +95,9 @@ export default function About() {
         </div>
         <div>
           <h3 className="font-display text-xl font-bold">Colores para el cake</h3>
-          <p className="mt-1 text-xs text-olive-200">Elige 1 o 2 colores — 100% naturales</p>
+          <p className="mt-1 text-xs text-olive-200">Elige 1 o 2 colores</p>
+
+          <p className="mt-3 text-xs text-olive-200">100% natural</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {CAKE_COLORS.map((c) => (
               <div key={c.name} className="flex items-center gap-2 rounded-full bg-white/10 py-1.5 pl-1.5 pr-3">

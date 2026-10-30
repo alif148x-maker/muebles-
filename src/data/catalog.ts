@@ -86,15 +86,13 @@ export const FLAVORS = [
 
 export const CAT_FLAVORS = ["Pollo", "Atún"];
 
-export const CAKE_COLORS = [
-  { name: "Blanco", hex: "#FBF7EE" },
+export const CAKE_COLORS = [{ name: "Blanco", hex: "#FBF7EE" }];
+
+export const VEGETABLE_COLORS = [
   { name: "Rosado claro (remolacha)", hex: "#F3C9C2" },
   { name: "Lila (arándano)", hex: "#D6C3E0" },
   { name: "Naranja (zanahoria y camote)", hex: "#E7A45C" },
   { name: "Verde (espirulina)", hex: "#A9C08C" },
-];
-
-export const VEGETABLE_COLORS = [
   { name: "Rojo", hex: "#F54A5A" },
   { name: "Azul", hex: "#336AC4" },
   { name: "Celeste", hex: "#A6D3EA" },
