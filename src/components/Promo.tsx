@@ -1,11 +1,13 @@
 import { Heart } from "lucide-react";
 import { PROMO } from "../data/catalog";
 import ProductCard from "./ProductCard";
+import ChristmasSnow from "./ChristmasSnow";
 
 export default function Promo() {
   return (
-    <section id="promo" className="bg-blush-50 py-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+    <section id="promo" className="relative overflow-hidden bg-blush-50 py-16">
+      <ChristmasSnow />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blush-500">
             <Heart size={14} className="fill-blush-400 text-blush-400" /> Oferta por tiempo limitado

@@ -1,10 +1,12 @@
 import { Instagram, MessageCircle, PawPrint, Star } from "lucide-react";
 import dogCake from "../assets/hero-dog-cake.jpg";
 import { INSTAGRAM_URL, WHATSAPP_NUMBER } from "../data/config";
+import ChristmasSnow from "./ChristmasSnow";
 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden paw-bg">
+      <ChristmasSnow />
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:py-20">
         <div className="relative z-10 flex flex-col gap-5 text-center md:text-left">
           <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full bg-blush-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-blush-500 md:mx-0">
@@ -59,6 +61,20 @@ export default function Hero() {
                     <Star key={i} size={10} fill="currentColor" strokeWidth={0} />
                   ))}
                 </span>
+              </span>
+              <span
+                className="xmas-sway absolute -right-3 -top-3 text-2xl motion-reduce:animate-none"
+                style={{ animationDuration: "2.6s" }}
+                aria-hidden="true"
+              >
+                🎄
+              </span>
+              <span
+                className="xmas-sway absolute -bottom-2 -right-2 text-xl motion-reduce:animate-none"
+                style={{ animationDuration: "2.2s", animationDelay: "0.4s" }}
+                aria-hidden="true"
+              >
+                🍬
               </span>
             </div>
           </div>

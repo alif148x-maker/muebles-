@@ -29,3 +29,48 @@ h1, h2, h3, h4, .font-display {
   background: #c7bd93;
   border-radius: 10px;
 }
+
+/* Experimental lightweight Christmas effects -- snow + a swaying accent.
+   Pure CSS transform/opacity so it stays smooth on mobile, and each snowflake
+   gets its own duration/delay/drift via inline custom properties. */
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--snow-opacity, 0.8);
+  }
+  90% {
+    opacity: var(--snow-opacity, 0.8);
+  }
+  100% {
+    transform: translate3d(var(--snow-drift, 0px), 110%, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes xmas-sway {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.xmas-sway {
+  display: inline-block;
+  transform-origin: 50% 85%;
+  animation-name: xmas-sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowflake,
+  .xmas-sway {
+    animation: none !important;
+  }
+}
