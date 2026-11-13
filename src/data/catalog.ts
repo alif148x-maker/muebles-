@@ -31,7 +31,7 @@ import imgCollarNavy from "../assets/products/collar-navy.jpg";
 import imgCollarLila from "../assets/products/collar-lila.jpg";
 import imgBolaTenis from "../assets/products/bola-tenis.jpg";
 import imgMiniDonuts from "../assets/products/mini-donuts.jpg";
-import imgMiniDonutsPersonalizados from "../assets/products/mini-donuts-personalizados.jpg";
+import imgChristmasCookieBox from "../assets/products/christmas-cookie-box.jpg";
 
 export type Category = "planes" | "cakes" | "pupcakes" | "decor" | "treats" | "promo" | "gatos" | "accesorios";
 
@@ -89,10 +89,10 @@ export const CAT_FLAVORS = ["Pollo", "Atún"];
 export const CAKE_COLORS = [{ name: "Blanco", hex: "#FBF7EE" }];
 
 export const VEGETABLE_COLORS = [
-  { name: "Rosado claro (remolacha)", hex: "#F3C9C2" },
-  { name: "Lila (arándano)", hex: "#D6C3E0" },
-  { name: "Naranja (zanahoria y camote)", hex: "#E7A45C" },
-  { name: "Verde (espirulina)", hex: "#A9C08C" },
+  { name: "Rosado claro", hex: "#F3C9C2" },
+  { name: "Lila", hex: "#D6C3E0" },
+  { name: "Naranja", hex: "#E7A45C" },
+  { name: "Verde", hex: "#A9C08C" },
   { name: "Rojo", hex: "#F54A5A" },
   { name: "Azul", hex: "#336AC4" },
   { name: "Celeste", hex: "#A6D3EA" },
@@ -325,7 +325,7 @@ export const CATALOG: Product[] = [
     category: "treats",
     name: "Mini Frosted Donuts",
     tagline: "Decorados para tu peludito",
-    images: [imgMiniDonuts, imgMiniDonutsPersonalizados],
+    images: [imgMiniDonuts],
     variants: [
       { id: "x3", label: "Combo de 3", price: 5 },
       { id: "x7", label: "Combo de 7", price: 10 },
@@ -345,6 +345,20 @@ export const CATALOG: Product[] = [
     priceNote: "desde",
     bullets: ["Cotiza tu tema o diseño en la caja de notas"],
     hasNote: true,
+  },
+  {
+    id: "christmas-cookie-box",
+    category: "treats",
+    name: "Barki Christmas Cookie Box",
+    tagline: "5 galletas navideñas",
+    price: 15,
+    images: [imgChristmasCookieBox],
+    bullets: [
+      "Sabor: Manzana & mantequilla de maní (única opción disponible)",
+      "Diseños navideños variados",
+      "Decoradas artesanalmente",
+      "Elaboradas especialmente para perros",
+    ],
   },
   {
     id: "canastita",
