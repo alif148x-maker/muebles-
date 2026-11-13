@@ -1,12 +1,10 @@
 import { Truck } from "lucide-react";
 import { DELIVERY_FREE_ZONES, DELIVERY_TIERS } from "../data/catalog";
-import ChristmasSnow from "./ChristmasSnow";
 
 export default function Delivery() {
   return (
     <section id="delivery" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="relative mx-auto max-w-2xl overflow-hidden text-center">
-        <ChristmasSnow />
+      <div className="mx-auto max-w-2xl text-center">
         <span className="text-xs font-bold uppercase tracking-widest text-blush-500">Delivery</span>
         <h2 className="mt-2 font-display text-3xl font-extrabold text-olive-800 sm:text-4xl">Nuestras tarifas</h2>
         <p className="mt-3 text-olive-600">Entregamos en toda la ciudad de Panamá. El costo de delivery se suma al confirmar tu pedido.</p>

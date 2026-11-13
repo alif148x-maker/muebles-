@@ -1,12 +1,11 @@
 import { Instagram, MessageCircle, PawPrint, Star } from "lucide-react";
 import dogCake from "../assets/hero-dog-cake.jpg";
 import { INSTAGRAM_URL, WHATSAPP_NUMBER } from "../data/config";
-import ChristmasSnow from "./ChristmasSnow";
+import SnowCap from "./SnowCap";
 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden paw-bg">
-      <ChristmasSnow />
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:py-20">
         <div className="relative z-10 flex flex-col gap-5 text-center md:text-left">
           <span className="mx-auto inline-flex w-fit items-center gap-2 rounded-full bg-blush-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-blush-500 md:mx-0">
@@ -48,11 +47,14 @@ export default function Hero() {
         <div className="relative mx-auto grid w-full max-w-md grid-cols-2 gap-4">
           <div className="relative col-span-2 mx-auto w-4/5 animate-fade-up">
             <div className="relative animate-float motion-reduce:animate-none">
-              <img
-                src={dogCake}
-                alt="Cliente feliz con su cake Barki"
-                className="w-full rounded-[2rem] object-contain shadow-soft"
-              />
+              <div className="relative overflow-hidden rounded-[2rem]">
+                <img
+                  src={dogCake}
+                  alt="Cliente feliz con su cake Barki"
+                  className="w-full object-contain shadow-soft"
+                />
+                <SnowCap />
+              </div>
               <span className="absolute left-2 top-2 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-olive-700 shadow-soft">
                 <PawPrint size={13} className="text-blush-400" />
                 Cliente feliz

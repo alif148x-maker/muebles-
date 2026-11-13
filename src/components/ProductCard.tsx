@@ -3,6 +3,7 @@ import { Minus, Plus, ShoppingBasket, PawPrint, ChevronLeft, ChevronRight } from
 import type { Product } from "../data/catalog";
 import { CAKE_COLORS, VEGETABLE_COLORS, FLAVORS, SHAPES } from "../data/catalog";
 import { useCart } from "../context/CartContext";
+import SnowCap from "./SnowCap";
 
 const COLOR_OPTIONS = [...CAKE_COLORS, ...VEGETABLE_COLORS];
 
@@ -13,7 +14,15 @@ function isNoteVisible(product: Product, choiceValue: string) {
   return Array.isArray(noteOn) ? noteOn.includes(choiceValue) : choiceValue === noteOn;
 }
 
-export default function ProductCard({ product, wide }: { product: Product; wide?: boolean }) {
+export default function ProductCard({
+  product,
+  wide,
+  seasonalFrame,
+}: {
+  product: Product;
+  wide?: boolean;
+  seasonalFrame?: boolean;
+}) {
   const { addLine } = useCart();
   const [variantId, setVariantId] = useState(product.variants?.[0]?.id ?? "");
   const [extrasOn, setExtrasOn] = useState<Record<string, boolean>>({});
@@ -129,6 +138,7 @@ export default function ProductCard({ product, wide }: { product: Product; wide?
         onTouchEnd={onTouchEnd}
       >
         <img src={images[imgIndex]} alt={product.name} className="h-full w-full object-contain" />
+        {seasonalFrame && <SnowCap />}
         {images.length > 1 && (
           <>
             <button

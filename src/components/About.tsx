@@ -1,7 +1,7 @@
 import { Wheat, Heart, ShieldCheck, Sparkles, PawPrint } from "lucide-react";
 import { CAKE_COLORS, FLAVORS, VEGETABLE_COLORS } from "../data/catalog";
 import founderPhoto from "../assets/hero-founder.jpg";
-import ChristmasSnow from "./ChristmasSnow";
+import SnowCap from "./SnowCap";
 
 const FEATURES = [
   {
@@ -29,8 +29,7 @@ const FEATURES = [
 export default function About() {
   return (
     <section id="nosotros" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="relative mx-auto max-w-2xl overflow-hidden text-center">
-        <ChristmasSnow />
+      <div className="mx-auto max-w-2xl text-center">
         <span className="text-xs font-bold uppercase tracking-widest text-blush-500">Sobre nosotros</span>
         <h2 className="mt-2 font-display text-3xl font-extrabold text-olive-800 sm:text-4xl">
           Un emprendimiento panameño hecho con las patitas y el corazón
@@ -43,11 +42,23 @@ export default function About() {
       </div>
 
       <div className="mt-12 grid items-center gap-8 rounded-[2rem] bg-white p-6 shadow-soft ring-1 ring-olive-200/60 sm:p-10 md:grid-cols-[0.8fr_1.2fr]">
-        <img
-          src={founderPhoto}
-          alt="María Pía Tamburrelli, fundadora de Barki"
-          className="mx-auto aspect-[4/5] w-full max-w-xs rounded-[1.75rem] object-cover shadow-soft"
-        />
+        <div className="relative mx-auto w-full max-w-xs">
+          <div className="relative overflow-hidden rounded-[1.75rem]">
+            <img
+              src={founderPhoto}
+              alt="María Pía Tamburrelli, fundadora de Barki"
+              className="aspect-[4/5] w-full object-cover shadow-soft"
+            />
+            <SnowCap />
+          </div>
+          <span
+            className="xmas-sway absolute -right-3 -top-3 text-2xl motion-reduce:animate-none"
+            style={{ animationDuration: "2.4s" }}
+            aria-hidden="true"
+          >
+            🍭
+          </span>
+        </div>
         <div>
           <PawPrint className="text-blush-300" size={28} />
           <h3 className="mt-2 font-display text-2xl font-bold text-olive-800">¿Quién está detrás de Barki?</h3>
