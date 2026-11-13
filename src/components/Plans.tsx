@@ -1,10 +1,12 @@
 import { PLANS } from "../data/catalog";
 import ProductCard from "./ProductCard";
+import ChristmasSnow from "./ChristmasSnow";
 
 export default function Plans() {
   return (
     <section id="planes" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="relative mx-auto max-w-2xl overflow-hidden text-center">
+        <ChristmasSnow />
         <span className="text-xs font-bold uppercase tracking-widest text-blush-500">Planes de cumpleaños</span>
         <h2 className="mt-2 font-display text-3xl font-extrabold text-olive-800 sm:text-4xl">
           Elige el plan perfecto para su fiesta
