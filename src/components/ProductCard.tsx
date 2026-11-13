@@ -1,4 +1,4 @@
-import { useMemo, useState, type TouchEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type TouchEvent } from "react";
 import { Minus, Plus, ShoppingBasket, PawPrint, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Product } from "../data/catalog";
 import { CAKE_COLORS, VEGETABLE_COLORS, FLAVORS, SHAPES } from "../data/catalog";
@@ -39,12 +39,31 @@ export default function ProductCard({
   const images = product.images ?? [];
   const [imgIndex, setImgIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  function startAutoplay() {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    if (images.length <= 1) return;
+    autoplayRef.current = setInterval(() => {
+      setImgIndex((i) => (i + 1) % images.length);
+    }, 4000);
+  }
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images.length]);
 
   function prevImg() {
     setImgIndex((i) => (i - 1 + images.length) % images.length);
+    startAutoplay();
   }
   function nextImg() {
     setImgIndex((i) => (i + 1) % images.length);
+    startAutoplay();
   }
   function onTouchStart(e: TouchEvent) {
     setTouchStartX(e.touches[0].clientX);
@@ -162,7 +181,10 @@ export default function ProductCard({
                 <button
                   key={img}
                   type="button"
-                  onClick={() => setImgIndex(i)}
+                  onClick={() => {
+                    setImgIndex(i);
+                    startAutoplay();
+                  }}
                   aria-label={`Foto ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all ${
                     i === imgIndex ? "w-4 bg-white" : "w-1.5 bg-white/60"
